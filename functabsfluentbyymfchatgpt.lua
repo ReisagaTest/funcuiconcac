@@ -1,11 +1,11 @@
-function Window:NewTab(mmb)
+function Window:NewTab(Deocojca)
     local domain
-    newmm = Window:AddTab(mmb)
+    newmm = Window:AddTab(Deocojca)
     domain = newmm
     function newmm:NewParagraph(cf)
         local paragraphnew
-        newTitle = cf.Title or "Tsuo Hub"
-        newContent = cf.Content or "MMB"
+        newTitle = cf.Title or "Whites Hub"
+        newContent = cf.Content or "Deocojca"
         paragraphnew =
             domain:AddParagraph(
             {
@@ -14,8 +14,8 @@ function Window:NewTab(mmb)
             }
         )
         function paragraphnew:Set(cf2)
-            newTitle = cf2.Title or "Tsuo Hub"
-            newContent = cf2.Content or "MMB"
+            newTitle = cf2.Title or "Whites Hub"
+            newContent = cf2.Content or "Deocojca"
             paragraphnew:SetTitle(newTitle)
             paragraphnew:SetDesc(newContent)
         end
@@ -106,7 +106,7 @@ function Window:NewTab(mmb)
     function newmm:NewDropdown(title, cf)
         DefaultConfigDropdown = {
             Title = "Drodown",
-            Values = {"MMB", "TSUO"},
+            Values = {"CC123", "DOG"},
             Multi = false,
             Default = nil
         }
@@ -209,4 +209,18 @@ function getRandomIcon()
         end
     end
     return ""
+end
+function CreateUiNotify(cf)
+    newtitle = cf.Title or "Whites Hub"
+    newcontent = cf.Content or "Nothing"
+    newduration = cf.Duration or 10
+    newsubcontent = cf.SubContent or ""
+    Fluent:Notify(
+        {
+            Title = newtitle,
+            Content = newcontent,
+            SubContent = newsubcontent, -- Optional
+            Duration = newduration -- Set to nil to make the notification not disappear
+        }
+    )
 end
